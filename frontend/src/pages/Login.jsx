@@ -651,7 +651,7 @@ function Login() {
             </div>
 
             <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">
-              Spirit of Kashmir
+              Sprit of Kashmir
             </h1>
             <p className="text-sm text-gray-400 mt-1.5 font-medium tracking-wide uppercase">
               Admin Portal

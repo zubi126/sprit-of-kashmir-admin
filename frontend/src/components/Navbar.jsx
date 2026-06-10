@@ -335,7 +335,7 @@ function Navbar({ sidebarOpen, setSidebarOpen }) {
             </div>
             <div className="min-w-0">
               <h1 className="text-base font-extrabold text-gray-900 leading-none tracking-tight truncate">
-                Spirit of Kashmir
+                Sprit of Kashmir
               </h1>
               <p className="text-[10px] text-gray-400 font-medium mt-0.5 uppercase tracking-widest">
                 Admin Dashboard
