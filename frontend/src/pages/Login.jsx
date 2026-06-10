@@ -565,17 +565,13 @@ function Login() {
     // mount animation trigger
     setTimeout(() => setMounted(true), 50);
 
-    console.log("========== LOGIN PAGE LOADED ==========");
-    console.log("CURRENT URL:", window.location.href);
-    console.log("ORIGIN:", window.location.origin);
-    console.log("GOOGLE CLIENT ID:", import.meta.env.VITE_GOOGLE_CLIENT_ID);
-    console.log("API URL:", import.meta.env.VITE_API_URL);
+    
   }, []);
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
       console.log("========== GOOGLE SUCCESS ==========");
-      console.log("FULL RESPONSE:", credentialResponse);
+      
 
       if (!secretKey.trim()) {
         alert("Please enter admin secret key");
@@ -589,11 +585,10 @@ function Login() {
         secretKey,
       };
 
-      console.log("REQUEST PAYLOAD:", payload);
 
       const res = await API.post("/auth/admin-google-login", payload);
 
-      console.log("BACKEND RESPONSE:", res.data);
+      
 
       localStorage.setItem("adminToken", res.data.token);
       localStorage.setItem("admin", JSON.stringify(res.data.user));
@@ -601,8 +596,7 @@ function Login() {
       window.location.href = "/dashboard";
     } catch (error) {
       console.log("========== LOGIN ERROR ==========");
-      console.log(error);
-      console.log("ERROR DATA:", error?.response?.data);
+      
       alert(error?.response?.data?.message || "Login failed");
     } finally {
       setLoading(false);
@@ -610,9 +604,7 @@ function Login() {
   };
 
   const handleGoogleError = () => {
-    console.log("========== GOOGLE ERROR ==========");
-    console.log("Origin:", window.location.origin);
-    console.log("Client ID:", import.meta.env.VITE_GOOGLE_CLIENT_ID);
+    
     alert("Google Login Failed");
   };
 
